@@ -38,10 +38,18 @@
                             <mainClass>fr.pantheonsorbonne.cri.App</mainClass>
                         </manifest>
                     </archive>
+
+                    <finalName>dextorm-onboarding</finalName>
                     <descriptorRefs>
                         <descriptorRef>jar-with-dependencies</descriptorRef>
                     </descriptorRefs>
+                    <appendAssemblyId>false</appendAssemblyId>
                 </configuration>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>2.8.2</version>
             </plugin>
         </plugins>
     </build>
@@ -54,7 +62,7 @@
         <dependency>
             <groupId>fr.pantheonsorbonne.cri</groupId>
             <artifactId>dextorm</artifactId>
-            <version>1.5.3</version>
+            <version>1.5.4</version>
         </dependency>
 
         <dependency>
@@ -92,4 +100,30 @@
             <version>3.20.0</version>
         </dependency>
     </dependencies>
+
+    <distributionManagement>
+        <repository>
+            <id>miage</id>
+            <name>Miage Releases</name>
+            <url>https://maven.miage.dev/releases</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>miage</id>
+            <name>Miage Snapshots</name>
+            <url>https://maven.miage.dev/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+    <repositories>
+        <repository>
+            <id>miage.release</id>
+            <name>Miage Releases</name>
+            <url>https://maven.miage.dev/releases</url>
+        </repository>
+        <repository>
+            <id>miage.snapshots</id>
+            <name>Miage Snapshots</name>
+            <url>https://maven.miage.dev/snapshots</url>
+        </repository>
+    </repositories>
 </project>
